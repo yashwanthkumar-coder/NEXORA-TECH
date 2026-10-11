@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexora Tech | Engineering Intelligence. Enabling Innovation.</title>
+    <meta name="description" content="Nexora Tech is a DeepTech startup building intelligent, scalable technology solutions using AI, machine learning, IoT, automation, and advanced data analytics.">
+    <meta name="keywords" content="DeepTech startup, Artificial Intelligence solutions, Machine Learning, Internet of Things, Intelligent automation, Data analytics, Technology innovation">
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            950: '#060a17',
+                            900: '#0b132b',
+                            800: '#1c2541',
+                            700: '#3a506b',
+                        },
+                        cyan: {
+                            400: '#38bdf8',
+                            500: '#06b6d4',
+                            450: '#00f0ff',
+                        },
+                        accent: {
+                            blue: '#4cc9f0',
+                            indigo: '#4361ee'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom CSS styling for advanced glow effects and custom animations -->
+    <style>
+        .glow-effect {
+            box-shadow: 0 0 25px rgba(0, 240, 255, 0.15);
+        }
+        .glow-effect-hover:hover {
+            box-shadow: 0 0 35px rgba(0, 240, 255, 0.3);
+            border-color: rgba(0, 240, 255, 0.5);
+        }
+        .bg-grid-pattern {
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #ffffff 0%, #4cc9f0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #060a17;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1c2541;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #3a506b;
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-navy-950 text-slate-100 font-sans antialiased selection:bg-cyan-500 selection:text-navy-950">
+
+    <!-- Sticky Navigation Bar -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-navy-950/90 backdrop-blur-md border-b border-white/10 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="#home" class="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-cyan-400 rounded-lg p-1">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-400 to-indigo-600 flex items-center justify-center text-navy-950 font-bold text-xl shadow-lg shadow-cyan-500/20 group-hover:scale-105 transition-transform">
+                        N
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-xl font-bold tracking-tight text-white group-hover:text-cyan-400 transition-colors">Nexora<span class="text-cyan-400">Tech</span></span>
+                        <span class="text-[10px] uppercase tracking-widest text-slate-400 font-mono">DeepTech Solutions</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden lg:flex items-center gap-1 xl:gap-2">
+                    <a href="#home" class="px-3 py-2 text-sm font-medium text-slate-300 hover:text-cyan-400 transition-colors rounded-md">Home</a>
+                    <a href="#about" class="px-3 py-2 text-sm font-medium text-slate-300 hover:text-cyan-400 transition-colors rounded-md">About Us</a>
+                    <a href="#technologies" class="px-3 py-2 text-sm font-medium text-slate-300 hover:text-cyan-400 transition-colors rounded-md">Technologies</a>
+                    <a href="#solutions" class="px-3 py-2 text-sm font-medium text-slate-300 hover:text-cyan-400 transition-colors rounded-md">Solutions</a>
+                    <a href="#industries" class="px-3 py-2 text-sm font-medium text-slate-300 hover:text-cyan-400 transition-colors rounded-md">Industries</a>
+                    <a href="#approach" class="px-3 py-2 text-sm font-medium text-slate-300 hover:text-cyan-400 transition-colors rounded-md">Our Approach</a>
+                    <a href="#vision" class="px-3 py-2 text-sm font-medium text-slate-300 hover:text-cyan-400 transition-colors rounded-md">Startup Vision</a>
+                    <a href="#contact" class="px-3 py-2 text-sm font-medium text-slate-300 hover:text-cyan-400 transition-colors rounded-md">Contact</a>
+                </nav>
+
+                <!-- Collaboration CTA Button -->
+                <div class="hidden lg:flex items-center">
+                    <a href="#contact" class="relative group overflow-hidden rounded-xl p-[1px] focus:outline-none focus:ring-2 focus:ring-cyan-400">
+                        <span class="absolute inset-0 bg-gradient-to-r from-cyan-400 to-indigo-600 transition-all duration-300 group-hover:scale-105"></span>
+                        <span class="relative px-5 py-2.5 rounded-xl bg-navy-900 text-sm font-semibold text-white flex items-center gap-2 group-hover:bg-opacity-80 transition-all">
+                            Let's Collaborate
+                            <svg class="w-4 h-4 text-cyan-400 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                        </span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="flex lg:hidden">
+                    <button type="button" id="mobile-menu-btn" class="p-2 rounded-lg bg-navy-800 text-slate-300 hover:text-white hover:bg-navy-700 focus:outline-none focus:ring-2 focus:ring-cyan-400" aria-label="Toggle Navigation Menu">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path id="menu-icon-bars" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                            <path id="menu-icon-close" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu Drawer -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-navy-900/95 backdrop-blur-xl border-b border-white/10 px-4 pt-2 pb-6 space-y-2">
+            <a href="#home" class="mobile-link block px-4 py-3 rounded-lg text-base font-medium text-slate-200 hover:bg-navy-800 hover:text-cyan-400 transition-colors">Home</a>
+            <a href="#about" class="mobile-link block px-4 py-3 rounded-lg text-base font-medium text-slate-200 hover:bg-navy-800 hover:text-cyan-400 transition-colors">About Us</a>
+            <a href="#technologies" class="mobile-link block px-4 py-3 rounded-lg text-base font-medium text-slate-200 hover:bg-navy-800 hover:text-cyan-400 transition-colors">Technologies</a>
+            <a href="#solutions" class="mobile-link block px-4 py-3 rounded-lg text-base font-medium text-slate-200 hover:bg-navy-800 hover:text-cyan-400 transition-colors">Solutions</a>
+            <a href="#industries" class="mobile-link block px-4 py-3 rounded-lg text-base font-medium text-slate-200 hover:bg-navy-800 hover:text-cyan-400 transition-colors">Industries</a>
+            <a href="#approach" class="mobile-link block px-4 py-3 rounded-lg text-base font-medium text-slate-200 hover:bg-navy-800 hover:text-cyan-400 transition-colors">Our Approach</a>
+            <a href="#vision" class="mobile-link block px-4 py-3 rounded-lg text-base font-medium text-slate-200 hover:bg-navy-800 hover:text-cyan-400 transition-colors">Startup Vision</a>
+            <a href="#contact" class="mobile-link block px-4 py-3 rounded-lg text-base font-medium text-slate-200 hover:bg-navy-800 hover:text-cyan-400 transition-colors">Contact</a>
+            <div class="pt-2">
+                <a href="#contact" class="mobile-link w-full text-center block py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-indigo-600 text-white font-semibold shadow-lg shadow-cyan-500/20">Let's Collaborate</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center pt-28 pb-20 overflow-hidden bg-grid-pattern">
+        <!-- Background Ambient Glow Gradients -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-10 right-10 w-[400px] h-[400px] bg-indigo-600/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Left Column: Content -->
+                <div class="lg:col-span-7 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-navy-800/80 border border-cyan-500/30 text-cyan-400 text-xs font-mono mb-6 shadow-inner">
+                        <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+                        Engineering Intelligence. Enabling Innovation.
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.15] mb-6">
+                        Engineering Intelligence for <span class="text-gradient">Real-World Impact</span>
+                    </h1>
+                    <p class="text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto lg:mx-0 mb-10 leading-relaxed font-normal">
+                        Nexora Tech builds intelligent, scalable technology solutions using AI, machine learning, IoT, automation, and advanced analytics to help solve complex real-world challenges.
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <a href="#solutions" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-cyan-500 to-indigo-600 text-white font-semibold shadow-xl shadow-cyan-500/20 hover:scale-[1.02] transition-transform text-center flex items-center justify-center gap-2">
+                            Explore Our Solutions
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </a>
+                        <a href="#contact" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-navy-900 border border-slate-700 text-slate-200 font-semibold hover:bg-navy-800 hover:border-cyan-400/50 transition-all text-center flex items-center justify-center gap-2">
+                            Connect With Us
+                        </a>
+                    </div>
+                    
+                    <!-- Quick Metrics / Pillars summary -->
+                    <div class="grid grid-cols-3 gap-4 mt-12 pt-8 border-t border-white/10 max-w-lg mx-auto lg:mx-0">
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-extrabold text-cyan-400 font-mono">AI & ML</div>
+                            <div class="text-xs text-slate-400 mt-1">Cognitive Models</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-extrabold text-white font-mono">IoT</div>
+                            <div class="text-xs text-slate-400 mt-1">Smart Sensors</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-extrabold text-cyan-400 font-mono">DeepTech</div>
+                            <div class="text-xs text-slate-400 mt-1">Research Driven</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Interactive Canvas Visual (Neural Network Simulation) -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative w-full max-w-md aspect-square rounded-3xl bg-navy-900/60 border border-white/10 glow-effect overflow-hidden p-4 flex items-center justify-center">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-cyan-500/5 to-indigo-600/5 pointer-events-none"></div>
+                        <canvas id="hero-canvas" class="w-full h-full rounded-2xl"></canvas>
+                        <div class="absolute bottom-4 left-4 right-4 bg-navy-950/80 backdrop-blur-md p-3 rounded-xl border border-white/10 flex items-center justify-between text-xs font-mono">
+                            <span class="text-slate-300">Neural Network Node Status</span>
+                            <span class="text-cyan-400 flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-ping"></span> Active Sync</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Nexora Tech Section -->
+    <section id="about" class="py-24 bg-navy-900/50 border-t border-white/10 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <span class="text-cyan-400 text-sm font-mono tracking-widest uppercase mb-3 block">Who We Are</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">About Nexora Tech</h2>
+                <p class="text-slate-300 mt-4 text-base sm:text-lg">
+                    Transforming real-world challenges into intelligent, scalable, and sustainable technology solutions through rigorous research and advanced engineering.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-16">
+                <!-- Left: Overview & Mission/Vision -->
+                <div class="lg:col-span-7 space-y-8 reveal">
+                    <div class="bg-navy-900 p-8 rounded-2xl border border-white/10 glow-effect-hover transition-all">
+                        <h3 class="text-xl font-bold text-white mb-3 flex items-center gap-3">
+                            <span class="w-8 h-8 rounded-lg bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400">01</span>
+                            Company Overview
+                        </h3>
+                        <p class="text-slate-300 leading-relaxed text-sm sm:text-base">
+                            Nexora Tech is a DeepTech startup dedicated to building innovative, technology-driven solutions using Artificial Intelligence (AI), Machine Learning (ML), Internet of Things (IoT), automation, and advanced data analytics. Our goal is to solve real-world problems through research, engineering, and scalable digital innovation, creating impactful solutions that drive efficiency, sustainability, and technological progress across industries.
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-navy-900 p-6 rounded-2xl border border-white/10">
+                            <h4 class="text-lg font-bold text-cyan-400 mb-2">Our Mission</h4>
+                            <p class="text-slate-300 text-sm leading-relaxed">
+                                To transform real-world challenges into intelligent, scalable, and sustainable technology solutions.
+                            </p>
+                        </div>
+                        <div class="bg-navy-900 p-6 rounded-2xl border border-white/10">
+                            <h4 class="text-lg font-bold text-cyan-400 mb-2">Our Vision</h4>
+                            <p class="text-slate-300 text-sm leading-relaxed">
+                                To build a future where advanced technologies make industries smarter, more efficient, and more sustainable.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Core Values Card Grid -->
+                <div class="lg:col-span-5 reveal">
+                    <div class="bg-navy-900 p-8 rounded-2xl border border-white/10 relative overflow-hidden">
+                        <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-cyan-500/10 rounded-full blur-2xl pointer-events-none"></div>
+                        <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-3">
+                            <svg class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                            Our Core Values
+                        </h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start gap-3 bg-navy-950/60 p-3.5 rounded-xl border border-white/5">
+                                <span class="w-6 h-6 rounded-full bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-xs font-bold mt-0.5">✓</span>
+                                <div>
+                                    <strong class="text-white block text-sm">Innovation</strong>
+                                    <span class="text-slate-400 text-xs">Pushing boundaries through creative engineering and novel research.</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3 bg-navy-950/60 p-3.5 rounded-xl border border-white/5">
+                                <span class="w-6 h-6 rounded-full bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-xs font-bold mt-0.5">✓</span>
+                                <div>
+                                    <strong class="text-white block text-sm">Integrity</strong>
+                                    <span class="text-slate-400 text-xs">Upholding transparency, data ethics, and honest technical standards.</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3 bg-navy-950/60 p-3.5 rounded-xl border border-white/5">
+                                <span class="w-6 h-6 rounded-full bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-xs font-bold mt-0.5">✓</span>
+                                <div>
+                                    <strong class="text-white block text-sm">Practical Problem-Solving</strong>
+                                    <span class="text-slate-400 text-xs">Focusing on tangible, deployable solutions for real-world pain points.</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3 bg-navy-950/60 p-3.5 rounded-xl border border-white/5">
+                                <span class="w-6 h-6 rounded-full bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-xs font-bold mt-0.5">✓</span>
+                                <div>
+                                    <strong class="text-white block text-sm">Sustainability</strong>
+                                    <span class="text-slate-400 text-xs">Designing tech that optimizes resource usage and minimizes ecological footprint.</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3 bg-navy-950/60 p-3.5 rounded-xl border border-white/5">
+                                <span class="w-6 h-6 rounded-full bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-xs font-bold mt-0.5">✓</span>
+                                <div>
+                                    <strong class="text-white block text-sm">Continuous Learning</strong>
+                                    <span class="text-slate-400 text-xs">Adapting rapidly to emerging research trends and feedback loops.</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Technologies Section -->
+    <section id="technologies" class="py-24 bg-navy-950 border-t border-white/10 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <span class="text-cyan-400 text-sm font-mono tracking-widest uppercase mb-3 block">Core Capabilities</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Our Technologies</h2>
+                <p class="text-slate-300 mt-4 text-base sm:text-lg">
+                    Built upon robust engineering pillars to power the next generation of industrial transformation.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Tech Card 1: AI -->
+                <div class="bg-navy-900/80 p-8 rounded-2xl border border-white/10 glow-effect-hover transition-all duration-300 flex flex-col justify-between reveal group">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-cyan-500/20 to-indigo-600/20 border border-cyan-500/30 flex items-center justify-center text-cyan-400 mb-6 group-hover:scale-110 transition-transform">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Artificial Intelligence (AI)</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                            Intelligent systems that support decision-making, automate complex tasks, and address intricate operational challenges with precision.
+                        </p>
+                    </div>
+                    <button onclick="openTechModal('Artificial Intelligence (AI)', 'Our AI models are engineered to replicate cognitive decision logic, synthesizing vast datasets into actionable intelligence. We focus on transparent, auditable neural architectures suitable for enterprise-grade deployment.')" class="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 text-sm font-semibold transition-colors focus:outline-none">
+                        Learn More 
+                        <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                    </button>
+                </div>
+
+                <!-- Tech Card 2: ML -->
+                <div class="bg-navy-900/80 p-8 rounded-2xl border border-white/10 glow-effect-hover transition-all duration-300 flex flex-col justify-between reveal group">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-cyan-500/20 to-indigo-600/20 border border-cyan-500/30 flex items-center justify-center text-cyan-400 mb-6 group-hover:scale-110 transition-transform">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Machine Learning (ML)</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                            Data-driven predictive models capable of continuous pattern recognition, adapting autonomously to shifting variables over time.
+                        </p>
+                    </div>
+                    <button onclick="openTechModal('Machine Learning (ML)', 'Our ML pipelines ingest historical and real-time telemetry to train high-accuracy prediction engines. We emphasize lightweight inference algorithms that minimize compute overhead while maximizing predictive reliability.')" class="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 text-sm font-semibold transition-colors focus:outline-none">
+                        Learn More 
+                        <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                    </button>
+                </div>
+
+                <!-- Tech Card 3: IoT -->
+                <div class="bg-navy-900/80 p-8 rounded-2xl border border-white/10 glow-effect-hover transition-all duration-300 flex flex-col justify-between reveal group">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-cyan-500/20 to-indigo-600/20 border border-cyan-500/30 flex items-center justify-center text-cyan-400 mb-6 group-hover:scale-110 transition-transform">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0"/></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Internet of Things (IoT)</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                            Connected edge devices and smart sensors that enable continuous monitoring, secure data collection, and smarter physical operations.
+                        </p>
+                    </div>
+                    <button onclick="openTechModal('Internet of Things (IoT)', 'We design secure edge-to-cloud IoT architectures that aggregate telemetry from diverse industrial hardware. Our protocol implementations ensure encrypted low-latency data streaming and robust edge fault tolerance.')" class="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 text-sm font-semibold transition-colors focus:outline-none">
+                        Learn More 
+                        <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                    </button>
+                </div>
+
+                <!-- Tech Card 4: Automation -->
+                <div class="bg-navy-900/80 p-8 rounded-2xl border border-white/10 glow-effect-hover transition-all duration-300 flex flex-col justify-between reveal group">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-cyan-500/20 to-indigo-600/20 border border-cyan-500/30 flex items-center justify-center text-cyan-400 mb-6 group-hover:scale-110 transition-transform">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Automation</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                            Technology-enabled intelligent workflows that reduce repetitive manual intervention and significantly improve operational efficiency.
+                        </p>
+                    </div>
+                    <button onclick="openTechModal('Automation', 'Our intelligent automation frameworks bridge legacy software systems with modern event-driven triggers, eliminating bottlenecks and mitigating human error across administrative and industrial pipelines.')" class="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 text-sm font-semibold transition-colors focus:outline-none">
+                        Learn More 
+                        <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                    </button>
+                </div>
+
+                <!-- Tech Card 5: Advanced Data Analytics -->
+                <div class="bg-navy-900/80 p-8 rounded-2xl border border-white/10 glow-effect-hover transition-all duration-300 flex flex-col justify-between reveal group md:col-span-2 lg:col-span-1">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-cyan-500/20 to-indigo-600/20 border border-cyan-500/30 flex items-center justify-center text-cyan-400 mb-6 group-hover:scale-110 transition-transform">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"/></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Advanced Data Analytics</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                            Transforming complex raw data silos into meaningful, visual insights for strategic long-term planning and tactical decision-making.
+                        </p>
+                    </div>
+                    <button onclick="openTechModal('Advanced Data Analytics', 'We build high-throughput analytics engines capable of real-time multi-dimensional querying, empowering organizations to uncover hidden efficiencies and market trajectories.')" class="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 text-sm font-semibold transition-colors focus:outline-none">
+                        Learn More 
+                        <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions and Real-World Applications Section -->
+    <section id="solutions" class="py-24 bg-navy-900/50 border-t border-white/10 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <span class="text-cyan-400 text-sm font-mono tracking-widest uppercase mb-3 block">Applied Innovation</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Solutions & Real-World Applications</h2>
+                <p class="text-slate-300 mt-4 text-base sm:text-lg">
+                    Illustrative solution areas demonstrating how our core technological capabilities address practical industry challenges. <span class="text-xs text-cyan-400 block mt-1 font-mono">(Note: Conceptual application models)</span>
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                <!-- Solution 1 -->
+                <div class="bg-navy-900 p-8 rounded-2xl border border-white/10 flex flex-col justify-between reveal">
+                    <div>
+                        <div class="inline-block px-3 py-1 rounded-md bg-cyan-500/10 text-cyan-400 text-xs font-mono mb-4">Solution Concept 01</div>
+                        <h3 class="text-lg font-bold text-white mb-4">Smart Monitoring & Predictive Maintenance</h3>
+                        <div class="space-y-3 text-sm text-slate-300">
+                            <p><strong class="text-cyan-400 font-mono text-xs uppercase block">Problem</strong> Equipment failures cause costly downtime in industrial operations.</p>
+                            <p><strong class="text-cyan-400 font-mono text-xs uppercase block">Approach</strong> Continuous IoT vibration & thermal sensor monitoring coupled with ML anomaly detection.</p>
+                            <p><strong class="text-cyan-400 font-mono text-xs uppercase block">Potential Benefit</strong> Proactive servicing before breakdowns occur, minimizing downtime.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Solution 2 -->
+                <div class="bg-navy-900 p-8 rounded-2xl border border-white/10 flex flex-col justify-between reveal">
+                    <div>
+                        <div class="inline-block px-3 py-1 rounded-md bg-cyan-500/10 text-cyan-400 text-xs font-mono mb-4">Solution Concept 02</div>
+                        <h3 class="text-lg font-bold text-white mb-4">AI-Powered Analytics & Decision Support</h3>
+                        <div class="space-y-3 text-sm text-slate-300">
+                            <p><strong class="text-cyan-400 font-mono text-xs uppercase block">Problem</strong> Complex operational datasets remain underutilized for strategic choices.</p>
+                            <p><strong class="text-cyan-400 font-mono text-xs uppercase block">Approach</strong> AI-driven query engines that synthesize multi-source telemetry into intuitive dashboards.</p>
+                            <p><strong class="text-cyan-400 font-mono text-xs uppercase block">Potential Benefit</strong> Faster, data-backed strategic planning and risk assessment.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Solution 3 -->
+                <div class="bg-navy-900 p-8 rounded-2xl border border-white/10 flex flex-col justify-between reveal">
+                    <div>
+                        <div class="inline-block px-3 py-1 rounded-md bg-cyan-500/10 text-cyan-400 text-xs font-mono mb-4">Solution Concept 03</div>
+                        <h3 class="text-lg font-bold text-white mb-4">IoT-Enabled Resource Monitoring</h3>
+                        <div class="space-y-3 text-sm text-slate-300">
+                            <p><strong class="text-cyan-400 font-mono text-xs uppercase block">Problem</strong> Inefficient resource allocation leads to material waste and inflated costs.</p>
+                            <p><strong class="text-cyan-400 font-mono text-xs uppercase block">Approach</strong> Distributed IoT sensor networks tracking real-time utility consumption and inventory status.</p>
+                            <p><strong class="text-cyan-400 font-mono text-xs uppercase block">Potential Benefit</strong> Optimized resource utilization and immediate waste reduction.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Solution 4 -->
+                <div class="bg-navy-900 p-8 rounded-2xl border border-white/10 flex flex-col justify-between reveal">
+                    <div>
+                        <div class="inline-block px-3 py-1 rounded-md bg-cyan-500/10 text-cyan-400 text-xs font-mono mb-4">Solution Concept 04</div>
+                        <h3 class="text-lg font-bold text-white mb-4">Intelligent Workflow Automation</h3>
+                        <div class="space-y-3 text-sm text-slate-300">
+                            <p><strong class="text-cyan-400 font-mono text-xs uppercase block">Problem</strong> Repetitive manual data entry drains employee productivity and invites errors.</p>
+                            <p><strong class="text-cyan-400 font-mono text-xs uppercase block">Approach</strong> Automated orchestration pipelines integrating data validation and task routing.</p>
+                            <p><strong class="text-cyan-400 font-mono text-xs uppercase block">Potential Benefit</strong> Streamlined operations and reallocation of human talent to core strategy.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Solution 5 -->
+                <div class="bg-navy-900 p-8 rounded-2xl border border-white/10 flex flex-col justify-between reveal">
+                    <div>
+                        <div class="inline-block px-3 py-1 rounded-md bg-cyan-500/10 text-cyan-400 text-xs font-mono mb-4">Solution Concept 05</div>
+                        <h3 class="text-lg font-bold text-white mb-4">Data-Driven Operational Optimization</h3>
+                        <div class="space-y-3 text-sm text-slate-300">
+                            <p><strong class="text-cyan-400 font-mono text-xs uppercase block">Problem</strong> Suboptimal scheduling and routing increase logistical overhead.</p>
+                            <p><strong class="text-cyan-400 font-mono text-xs uppercase block">Approach</strong> Advanced analytics models simulating supply and demand curves for dynamic scheduling.</p>
+                            <p><strong class="text-cyan-400 font-mono text-xs uppercase block">Potential Benefit</strong> Heightened throughput and lower operational expenditure.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Solution 6 -->
+                <div class="bg-navy-900 p-8 rounded-2xl border border-white/10 flex flex-col justify-between reveal">
+                    <div>
+                        <div class="inline-block px-3 py-1 rounded-md bg-cyan-500/10 text-cyan-400 text-xs font-mono mb-4">Solution Concept 06</div>
+                        <h3 class="text-lg font-bold text-white mb-4">Sustainability & Resource-Efficiency Solutions</h3>
+                        <div class="space-y-3 text-sm text-slate-300">
+                            <p><strong class="text-cyan-400 font-mono text-xs uppercase block">Problem</strong> Enterprises struggle to measure and curb their carbon and energy footprints.</p>
+                            <p><strong class="text-cyan-400 font-mono text-xs uppercase block">Approach</strong> Automated carbon footprint tracking and energy consumption analytics.</p>
+                            <p><strong class="text-cyan-400 font-mono text-xs uppercase block">Potential Benefit</strong> Compliance with environmental standards and reduced energy overhead.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Discuss Challenge CTA Box -->
+            <div class="bg-gradient-to-r from-navy-900 to-navy-800 p-8 sm:p-12 rounded-3xl border border-cyan-500/30 text-center relative overflow-hidden reveal">
+                <div class="absolute inset-0 bg-grid-pattern opacity-30 pointer-events-none"></div>
+                <h3 class="text-2xl sm:text-3xl font-bold text-white mb-4 relative z-10">Have a Specific Operational Challenge?</h3>
+                <p class="text-slate-300 max-w-2xl mx-auto mb-8 relative z-10 text-sm sm:text-base">
+                    We collaborate with industry partners, researchers, and forward-thinking enterprises to architect custom DeepTech solutions.
+                </p>
+                <a href="#contact" class="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-cyan-500 to-indigo-600 text-white font-semibold shadow-lg shadow-cyan-500/20 hover:scale-105 transition-transform relative z-10">
+                    Discuss a Challenge With Us
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industries We Aim to Serve Section -->
+    <section id="industries" class="py-24 bg-navy-950 border-t border-white/10 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <span class="text-cyan-400 text-sm font-mono tracking-widest uppercase mb-3 block">Target Domains</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Industries We Aim to Serve</h2>
+                <p class="text-slate-300 mt-4 text-base sm:text-lg">
+                    Applying tailored intelligence to high-impact sectors where efficiency and sustainability matter most. <span class="text-xs text-slate-400 block mt-1">(Prospective application domains)</span>
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Industry 1 -->
+                <div class="bg-navy-900/60 p-8 rounded-2xl border border-white/10 hover:border-cyan-400/40 transition-all reveal">
+                    <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 mb-6 font-mono font-bold">01</div>
+                    <h3 class="text-xl font-bold text-white mb-3">Manufacturing & Industrial Operations</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Optimizing factory floors through predictive maintenance, automated quality inspection, and supply chain synchronization.
+                    </p>
+                </div>
+
+                <!-- Industry 2 -->
+                <div class="bg-navy-900/60 p-8 rounded-2xl border border-white/10 hover:border-cyan-400/40 transition-all reveal">
+                    <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 mb-6 font-mono font-bold">02</div>
+                    <h3 class="text-xl font-bold text-white mb-3">Agriculture & Smart Farming</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Enhancing crop yields and resource efficiency via IoT soil sensors, automated irrigation, and aerial data analytics.
+                    </p>
+                </div>
+
+                <!-- Industry 3 -->
+                <div class="bg-navy-900/60 p-8 rounded-2xl border border-white/10 hover:border-cyan-400/40 transition-all reveal">
+                    <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 mb-6 font-mono font-bold">03</div>
+                    <h3 class="text-xl font-bold text-white mb-3">Healthcare Technology</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Streamlining hospital workflows, secure medical data processing, and clinical decision support systems.
+                    </p>
+                </div>
+
+                <!-- Industry 4 -->
+                <div class="bg-navy-900/60 p-8 rounded-2xl border border-white/10 hover:border-cyan-400/40 transition-all reveal">
+                    <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 mb-6 font-mono font-bold">04</div>
+                    <h3 class="text-xl font-bold text-white mb-3">Energy & Sustainability</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Monitoring smart grids, tracking renewable energy distribution, and reducing carbon emission footprints.
+                    </p>
+                </div>
+
+                <!-- Industry 5 -->
+                <div class="bg-navy-900/60 p-8 rounded-2xl border border-white/10 hover:border-cyan-400/40 transition-all reveal">
+                    <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 mb-6 font-mono font-bold">05</div>
+                    <h3 class="text-xl font-bold text-white mb-3">Logistics & Supply Chains</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Real-time fleet telemetry, route optimization models, and predictive inventory demand forecasting.
+                    </p>
+                </div>
+
+                <!-- Industry 6 -->
+                <div class="bg-navy-900/60 p-8 rounded-2xl border border-white/10 hover:border-cyan-400/40 transition-all reveal">
+                    <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 mb-6 font-mono font-bold">06</div>
+                    <h3 class="text-xl font-bold text-white mb-3">Smart Infrastructure</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Intelligent urban monitoring, structural health sensing, and automated municipal utility management.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Approach Section -->
+    <section id="approach" class="py-24 bg-navy-900/50 border-t border-white/10 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <span class="text-cyan-400 text-sm font-mono tracking-widest uppercase mb-3 block">Methodology</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Our 5-Step Approach</h2>
+                <p class="text-slate-300 mt-4 text-base sm:text-lg">
+                    A rigorous, research-first framework ensuring every solution is purposeful, validated, and scalable.
+                </p>
+            </div>
+
+            <!-- Timeline Container -->
+            <div class="relative reveal">
+                <!-- Desktop connecting line -->
+                <div class="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-cyan-500/30 -translate-y-1/2 z-0"></div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 relative z-10">
+                    <!-- Step 1 -->
+                    <div class="bg-navy-900 p-6 rounded-2xl border border-white/10 flex flex-col justify-between relative group hover:border-cyan-400 transition-colors">
+                        <div>
+                            <div class="w-10 h-10 rounded-xl bg-cyan-500 text-navy-950 font-extrabold flex items-center justify-center mb-4 font-mono shadow-lg shadow-cyan-500/20">01</div>
+                            <h3 class="text-lg font-bold text-white mb-2">Discover</h3>
+                            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                                Understand the core problem, user needs, and operational constraints through deep stakeholder engagement.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="bg-navy-900 p-6 rounded-2xl border border-white/10 flex flex-col justify-between relative group hover:border-cyan-400 transition-colors">
+                        <div>
+                            <div class="w-10 h-10 rounded-xl bg-cyan-500 text-navy-950 font-extrabold flex items-center justify-center mb-4 font-mono shadow-lg shadow-cyan-500/20">02</div>
+                            <h3 class="text-lg font-bold text-white mb-2">Research</h3>
+                            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                                Evaluate underlying data parameters, technology stack feasibility, and algorithmic options.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="bg-navy-900 p-6 rounded-2xl border border-white/10 flex flex-col justify-between relative group hover:border-cyan-400 transition-colors">
+                        <div>
+                            <div class="w-10 h-10 rounded-xl bg-cyan-500 text-navy-950 font-extrabold flex items-center justify-center mb-4 font-mono shadow-lg shadow-cyan-500/20">03</div>
+                            <h3 class="text-lg font-bold text-white mb-2">Design</h3>
+                            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                                Develop practical solution architecture, data pipelines, and user experience blueprints.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="bg-navy-900 p-6 rounded-2xl border border-white/10 flex flex-col justify-between relative group hover:border-cyan-400 transition-colors">
+                        <div>
+                            <div class="w-10 h-10 rounded-xl bg-cyan-500 text-navy-950 font-extrabold flex items-center justify-center mb-4 font-mono shadow-lg shadow-cyan-500/20">04</div>
+                            <h3 class="text-lg font-bold text-white mb-2">Build & Validate</h3>
+                            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                                Create working prototypes, run rigorous stress tests, and validate performance metrics.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 5 -->
+                    <div class="bg-navy-900 p-6 rounded-2xl border border-white/10 flex flex-col justify-between relative group hover:border-cyan-400 transition-colors">
+                        <div>
+                            <div class="w-10 h-10 rounded-xl bg-cyan-500 text-navy-950 font-extrabold flex items-center justify-center mb-4 font-mono shadow-lg shadow-cyan-500/20">05</div>
+                            <h3 class="text-lg font-bold text-white mb-2">Scale & Improve</h3>
+                            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                                Refine solutions continuously using field feedback, telemetry loops, and measurable results.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Nexora Tech Section -->
+    <section class="py-24 bg-navy-950 border-t border-white/10 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <span class="text-cyan-400 text-sm font-mono tracking-widest uppercase mb-3 block">Our Value Proposition</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Why Nexora Tech?</h2>
+                <p class="text-slate-300 mt-4 text-base sm:text-lg">
+                    Guided by scientific rigor and pragmatic engineering principles.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-navy-900/60 p-8 rounded-2xl border border-white/10 reveal">
+                    <div class="text-cyan-400 font-mono text-xl font-bold mb-3">01</div>
+                    <h3 class="text-lg font-bold text-white mb-2">Research-Driven Innovation</h3>
+                    <p class="text-slate-300 text-sm">Grounded in rigorous investigation and modern technological research before implementation.</p>
+                </div>
+                <div class="bg-navy-900/60 p-8 rounded-2xl border border-white/10 reveal">
+                    <div class="text-cyan-400 font-mono text-xl font-bold mb-3">02</div>
+                    <h3 class="text-lg font-bold text-white mb-2">Practical, Problem-First Engineering</h3>
+                    <p class="text-slate-300 text-sm">Prioritizing real-world utility over buzzwords to solve authentic operational pain points.</p>
+                </div>
+                <div class="bg-navy-900/60 p-8 rounded-2xl border border-white/10 reveal">
+                    <div class="text-cyan-400 font-mono text-xl font-bold mb-3">03</div>
+                    <h3 class="text-lg font-bold text-white mb-2">Scalable and Adaptable Solutions</h3>
+                    <p class="text-slate-300 text-sm">Architectures designed to grow seamlessly alongside enterprise demands and data volume.</p>
+                </div>
+                <div class="bg-navy-900/60 p-8 rounded-2xl border border-white/10 reveal">
+                    <div class="text-cyan-400 font-mono text-xl font-bold mb-3">04</div>
+                    <h3 class="text-lg font-bold text-white mb-2">Responsible Technology Use</h3>
+                    <p class="text-slate-300 text-sm">Committed to ethical data handling, security-first design, and transparent model behavior.</p>
+                </div>
+                <div class="bg-navy-900/60 p-8 rounded-2xl border border-white/10 reveal md:col-span-2 lg:col-span-2">
+                    <div class="text-cyan-400 font-mono text-xl font-bold mb-3">05</div>
+                    <h3 class="text-lg font-bold text-white mb-2">Focus on Efficiency and Sustainability</h3>
+                    <p class="text-slate-300 text-sm">Building solutions that actively reduce resource waste, energy consumption, and environmental impact.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Startup Vision & Roadmap Section -->
+    <section id="vision" class="py-24 bg-navy-900/50 border-t border-white/10 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <span class="text-cyan-400 text-sm font-mono tracking-widest uppercase mb-3 block">Growth Trajectory</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Startup Vision & Roadmap</h2>
+                <p class="text-slate-300 mt-4 text-base sm:text-lg">
+                    An illustrative roadmap guiding our evolution from concept to scalable enterprise impact.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 reveal">
+                <!-- Stage 1 -->
+                <div class="bg-navy-900 p-6 rounded-2xl border border-white/10 relative">
+                    <div class="absolute top-4 right-4 text-xs font-mono text-cyan-400 bg-cyan-500/10 px-2.5 py-1 rounded">Stage 01</div>
+                    <h3 class="text-lg font-bold text-white mb-3 mt-4">Foundation</h3>
+                    <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                        Identify meaningful real-world problems, conduct initial market scoping, and validate user needs.
+                    </p>
+                </div>
+
+                <!-- Stage 2 -->
+                <div class="bg-navy-900 p-6 rounded-2xl border border-white/10 relative">
+                    <div class="absolute top-4 right-4 text-xs font-mono text-cyan-400 bg-cyan-500/10 px-2.5 py-1 rounded">Stage 02</div>
+                    <h3 class="text-lg font-bold text-white mb-3 mt-4">Research & Prototyping</h3>
+                    <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                        Explore technical feasibility, test core algorithms, and develop early functional prototypes.
+                    </p>
+                </div>
+
+                <!-- Stage 3 -->
+                <div class="bg-navy-900 p-6 rounded-2xl border border-white/10 relative">
+                    <div class="absolute top-4 right-4 text-xs font-mono text-cyan-400 bg-cyan-500/10 px-2.5 py-1 rounded">Stage 03</div>
+                    <h3 class="text-lg font-bold text-white mb-3 mt-4">Validation</h3>
+                    <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                        Gather mentor and user feedback, benchmark performance, and test solution effectiveness in controlled environments.
+                    </p>
+                </div>
+
+                <!-- Stage 4 -->
+                <div class="bg-navy-900 p-6 rounded-2xl border border-white/10 relative">
+                    <div class="absolute top-4 right-4 text-xs font-mono text-cyan-400 bg-cyan-500/10 px-2.5 py-1 rounded">Stage 04</div>
+                    <h3 class="text-lg font-bold text-white mb-3 mt-4">Growth & Scale</h3>
+                    <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                        Refine viable commercial solutions, forge strategic industry partnerships, and expand deployment reach.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact and Collaboration Section -->
+    <section id="contact" class="py-24 bg-navy-950 border-t border-white/10 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <span class="text-cyan-400 text-sm font-mono tracking-widest uppercase mb-3 block">Get In Touch</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Let's Collaborate</h2>
+                <p class="text-slate-300 mt-4 text-base sm:text-lg">
+                    We welcome potential customers, startup mentors, research collaborators, and industry partners. Connect with us to explore technological synergy.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                <!-- Left Column: Info & Placeholders -->
+                <div class="lg:col-span-5 space-y-8 reveal">
+                    <div class="bg-navy-900 p-8 rounded-2xl border border-white/10 space-y-6">
+                        <h3 class="text-xl font-bold text-white">Contact Information</h3>
+                        <p class="text-slate-300 text-sm">
+                            Reach out directly through our official channels or fill out the collaboration form.
+                        </p>
+
+                        <div class="space-y-4 pt-2">
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 shrink-0">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                                </div>
+                                <div>
+                                    <span class="text-xs text-slate-400 uppercase font-mono block">Official Email</span>
+                                    <span class="text-white font-medium">[contact@nexoratech.com - Placeholder]</span>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 shrink-0">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                                </div>
+                                <div>
+                                    <span class="text-xs text-slate-400 uppercase font-mono block">Phone Number</span>
+                                    <span class="text-white font-medium">[+1 (XXX) XXX-XXXX - Placeholder]</span>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 shrink-0">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                                </div>
+                                <div>
+                                    <span class="text-xs text-slate-400 uppercase font-mono block">Business Location</span>
+                                    <span class="text-white font-medium">[Innovation Hub / City, Country - Placeholder]</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-cyan-500/5 border border-cyan-500/20 text-xs text-slate-300 leading-relaxed font-mono">
+                            ℹ️ Note for Evaluators: Wadhwani Entrepreneur program mentors and investors are welcome to test inquiries.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Interactive Contact Form -->
+                <div class="lg:col-span-7 reveal">
+                    <form id="contact-form" class="bg-navy-900 p-8 sm:p-10 rounded-2xl border border-white/10 space-y-6 relative" novalidate>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <!-- Full Name -->
+                            <div>
+                                <label for="full-name" class="block text-sm font-medium text-slate-300 mb-2">Full Name <span class="text-cyan-400">*</span></label>
+                                <input type="text" id="full-name" name="fullName" required class="w-full px-4 py-3 rounded-xl bg-navy-950 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400 transition-colors text-sm" placeholder="John Doe">
+                                <span class="error-msg text-xs text-red-400 mt-1 hidden" id="error-full-name">Please enter your full name.</span>
+                            </div>
+
+                            <!-- Email Address -->
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-slate-300 mb-2">Email Address <span class="text-cyan-400">*</span></label>
+                                <input type="email" id="email" name="email" required class="w-full px-4 py-3 rounded-xl bg-navy-950 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400 transition-colors text-sm" placeholder="john@example.com">
+                                <span class="error-msg text-xs text-red-400 mt-1 hidden" id="error-email">Please enter a valid email address.</span>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <!-- Organization -->
+                            <div>
+                                <label for="organization" class="block text-sm font-medium text-slate-300 mb-2">Organization <span class="text-slate-500 text-xs">(Optional)</span></label>
+                                <input type="text" id="organization" name="organization" class="w-full px-4 py-3 rounded-xl bg-navy-950 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400 transition-colors text-sm" placeholder="Company / Institution">
+                            </div>
+
+                            <!-- Inquiry Type -->
+                            <div>
+                                <label for="inquiry-type" class="block text-sm font-medium text-slate-300 mb-2">Inquiry Type <span class="text-cyan-400">*</span></label>
+                                <select id="inquiry-type" name="inquiryType" required class="w-full px-4 py-3 rounded-xl bg-navy-950 border border-white/10 text-white focus:outline-none focus:border-cyan-400 transition-colors text-sm">
+                                    <option value="" disabled selected>Select inquiry type</option>
+                                    <option value="Business Inquiry">Business Inquiry</option>
+                                    <option value="Collaboration">Collaboration</option>
+                                    <option value="Mentorship">Mentorship</option>
+                                    <option value="Partnership">Partnership</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                                <span class="error-msg text-xs text-red-400 mt-1 hidden" id="error-inquiry-type">Please select an inquiry type.</span>
+                            </div>
+                        </div>
+
+                        <!-- Message -->
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-slate-300 mb-2">Message <span class="text-cyan-400">*</span></label>
+                            <textarea id="message" name="message" rows="4" required class="w-full px-4 py-3 rounded-xl bg-navy-950 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400 transition-colors text-sm" placeholder="Describe your inquiry, project challenge, or mentorship notes..."></textarea>
+                            <span class="error-msg text-xs text-red-400 mt-1 hidden" id="error-message">Please enter your message.</span>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-cyan-500 to-indigo-600 text-white font-semibold shadow-lg shadow-cyan-500/20 hover:scale-[1.01] transition-transform flex items-center justify-center gap-2">
+                            Send Message
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                        </button>
+
+                        <!-- Form Notice Box -->
+                        <div id="form-notice" class="hidden p-4 rounded-xl bg-navy-950 border border-cyan-500/30 text-xs text-slate-300 font-mono leading-relaxed">
+                            <strong class="text-cyan-400 block mb-1">Submission Handling Notice:</strong>
+                            Form validation successful! Note: This static website is currently not connected to a live backend server. To receive actual submissions, please configure a backend form service such as Formspree, EmailJS, or Netlify Forms.
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-navy-950 border-t border-white/10 py-16 text-slate-400 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
+                <!-- Col 1: Brand -->
+                <div class="lg:col-span-2 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-400 to-indigo-600 flex items-center justify-center text-navy-950 font-bold text-lg">
+                            N
+                        </div>
+                        <span class="text-lg font-bold text-white tracking-tight">Nexora<span class="text-cyan-400">Tech</span></span>
+                    </div>
+                    <p class="text-slate-400 text-xs sm:text-sm max-w-sm leading-relaxed">
+                        Engineering Intelligence. Enabling Innovation. Building advanced AI, ML, IoT, and automated solutions for a smarter, sustainable future.
+                    </p>
+                    <div class="text-xs font-mono text-slate-500">
+                        Wadhwani Entrepreneur Program Participant (Placeholder)
+                    </div>
+                </div>
+
+                <!-- Col 2: Quick Links -->
+                <div>
+                    <h4 class="text-white font-semibold text-sm mb-4">Quick Links</h4>
+                    <ul class="space-y-2.5 text-xs sm:text-sm">
+                        <li><a href="#home" class="hover:text-cyan-400 transition-colors">Home</a></li>
+                        <li><a href="#about" class="hover:text-cyan-400 transition-colors">About Us</a></li>
+                        <li><a href="#technologies" class="hover:text-cyan-400 transition-colors">Technologies</a></li>
+                        <li><a href="#solutions" class="hover:text-cyan-400 transition-colors">Solutions</a></li>
+                        <li><a href="#approach" class="hover:text-cyan-400 transition-colors">Our Approach</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Technologies -->
+                <div>
+                    <h4 class="text-white font-semibold text-sm mb-4">Technologies</h4>
+                    <ul class="space-y-2.5 text-xs sm:text-sm">
+                        <li><a href="#technologies" class="hover:text-cyan-400 transition-colors">Artificial Intelligence</a></li>
+                        <li><a href="#technologies" class="hover:text-cyan-400 transition-colors">Machine Learning</a></li>
+                        <li><a href="#technologies" class="hover:text-cyan-400 transition-colors">Internet of Things (IoT)</a></li>
+                        <li><a href="#technologies" class="hover:text-cyan-400 transition-colors">Intelligent Automation</a></li>
+                        <li><a href="#technologies" class="hover:text-cyan-400 transition-colors">Advanced Analytics</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Contact & Social Placeholders -->
+                <div>
+                    <h4 class="text-white font-semibold text-sm mb-4">Connect</h4>
+                    <p class="text-xs text-slate-400 mb-3">[contact@nexoratech.com]</p>
+                    <div class="flex flex-col space-y-2 text-xs font-mono">
+                        <span class="text-slate-500 hover:text-cyan-400 cursor-pointer">[LinkedIn - Placeholder]</span>
+                        <span class="text-slate-500 hover:text-cyan-400 cursor-pointer">[GitHub - Placeholder]</span>
+                        <span class="text-slate-500 hover:text-cyan-400 cursor-pointer">[Twitter / X - Placeholder]</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Copyright -->
+            <div class="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500">
+                <p>&copy; <span id="current-year">2026</span> Nexora Tech. All rights reserved.</p>
+                <p class="mt-2 sm:mt-0 font-mono">Engineering Intelligence. Enabling Innovation.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Technology Details Modal Window -->
+    <div id="tech-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-navy-950/80 backdrop-blur-sm hidden">
+        <div class="bg-navy-900 border border-cyan-500/30 rounded-2xl max-w-lg w-full p-6 sm:p-8 relative glow-effect shadow-2xl">
+            <button onclick="closeTechModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white p-2 focus:outline-none" aria-label="Close modal">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+            <div id="modal-content" class="space-y-4">
+                <h3 id="modal-title" class="text-2xl font-bold text-white"></h3>
+                <p id="modal-desc" class="text-slate-300 text-sm sm:text-base leading-relaxed"></p>
+                <div class="pt-4 border-t border-white/10 flex justify-end">
+                    <button onclick="closeTechModal()" class="px-5 py-2.5 rounded-xl bg-cyan-500 text-navy-950 font-semibold text-sm hover:bg-cyan-400 transition-colors">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-6 right-6 z-40 w-12 h-12 rounded-2xl bg-cyan-500 text-navy-950 font-bold flex items-center justify-center shadow-lg shadow-cyan-500/20 opacity-0 pointer-events-none hover:bg-cyan-400 transition-all focus:outline-none" aria-label="Back to top">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/></svg>
+    </button>
+
+    <!-- Vanilla JavaScript for interactivity, canvas animation, validation, and scroll effects -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            /* 1. Dynamic Copyright Year */
+            const yearSpan = document.getElementById('current-year');
+            if (yearSpan) {
+                yearSpan.textContent = new Date().getFullYear();
+            }
+
+            /* 2. Mobile Navigation Toggle */
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIconBars = document.getElementById('menu-icon-bars');
+            const menuIconClose = document.getElementById('menu-icon-close');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+
+            function toggleMobileMenu() {
+                mobileMenu.classList.toggle('hidden');
+                menuIconBars.classList.toggle('hidden');
+                menuIconClose.classList.toggle('hidden');
+            }
+
+            if (mobileMenuBtn) {
+                mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+            }
+
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        toggleMobileMenu();
+                    }
+                });
+            });
+
+            /* 3. Sticky Navbar Shadow Effect on Scroll */
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 20) {
+                    navbar.classList.add('shadow-xl', 'bg-navy-950/95');
+                } else {
+                    navbar.classList.remove('shadow-xl');
+                }
+            });
+
+            /* 4. Back to Top Button Visibility & Scroll */
+            const backToTopBtn = document.getElementById('back-to-top');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 400) {
+                    backToTopBtn.classList.remove('opacity-0', 'pointer-events-none');
+                    backToTopBtn.classList.add('opacity-100');
+                } else {
+                    backToTopBtn.classList.add('opacity-0', 'pointer-events-none');
+                    backToTopBtn.classList.remove('opacity-100');
+                }
+            });
+
+            if (backToTopBtn) {
+                backToTopBtn.addEventListener('click', () => {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            }
+
+            /* 5. Scroll Reveal Animations */
+            const revealElements = document.querySelectorAll('.reveal');
+            const revealOnScroll = () => {
+                const windowHeight = window.innerHeight;
+                revealElements.forEach(el => {
+                    const elementTop = el.getBoundingClientRect().top;
+                    const elementVisible = 100;
+                    if (elementTop < windowHeight - elementVisible) {
+                        el.classList.add('active');
+                    }
+                });
+            };
+            window.addEventListener('scroll', revealOnScroll);
+            revealOnScroll(); // Trigger once on load
+
+            /* 6. Hero Section Canvas Neural Network Animation */
+            const canvas = document.getElementById('hero-canvas');
+            if (canvas) {
+                const ctx = canvas.getContext('2d');
+                let width = canvas.parentElement.clientWidth;
+                let height = canvas.parentElement.clientHeight;
+                canvas.width = width;
+                canvas.height = height;
+
+                window.addEventListener('resize', () => {
+                    if (canvas.parentElement) {
+                        width = canvas.parentElement.clientWidth;
+                        height = canvas.parentElement.clientHeight;
+                        canvas.width = width;
+                        canvas.height = height;
+                    }
+                });
+
+                const particles = [];
+                const particleCount = 25;
+                for (let i = 0; i < particleCount; i++) {
+                    particles.push({
+                        x: Math.random() * width,
+                        y: Math.random() * height,
+                        vx: (Math.random() - 0.5) * 0.8,
+                        vy: (Math.random() - 0.5) * 0.8,
+                        radius: Math.random() * 2 + 1.5
+                    });
+                }
+
+                function animateCanvas() {
+                    ctx.clearRect(0, 0, width, height);
+
+                    // Draw connecting lines
+                    for (let i = 0; i < particles.length; i++) {
+                        for (let j = i + 1; j < particles.length; j++) {
+                            const dx = particles[i].x - particles[j].x;
+                            const dy = particles[i].y - particles[j].y;
+                            const dist = Math.sqrt(dx * dx + dy * dy);
+                            if (dist < 100) {
+                                ctx.beginPath();
+                                ctx.moveTo(particles[i].x, particles[i].y);
+                                ctx.lineTo(particles[j].x, particles[j].y);
+                                ctx.strokeStyle = `rgba(56, 189, 248, ${0.2 * (1 - dist / 100)})`;
+                                ctx.lineWidth = 1;
+                                ctx.stroke();
+                            }
+                        }
+                    }
+
+                    // Update and draw particles
+                    particles.forEach(p => {
+                        p.x += p.vx;
+                        p.y += p.vy;
+
+                        if (p.x < 0 || p.x > width) p.vx *= -1;
+                        if (p.y < 0 || p.y > height) p.vy *= -1;
+
+                        ctx.beginPath();
+                        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+                        ctx.fillStyle = '#00f0ff';
+                        ctx.fill();
+                    });
+
+                    requestAnimationFrame(animateCanvas);
+                }
+                animateCanvas();
+            }
+
+            /* 7. Contact Form Validation */
+            const contactForm = document.getElementById('contact-form');
+            if (contactForm) {
+                contactForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    let isValid = true;
+
+                    // Full Name validation
+                    const fullNameInput = document.getElementById('full-name');
+                    const errorFullName = document.getElementById('error-full-name');
+                    if (!fullNameInput.value.trim()) {
+                        errorFullName.classList.remove('hidden');
+                        isValid = false;
+                    } else {
+                        errorFullName.classList.add('hidden');
+                    }
+
+                    // Email validation
+                    const emailInput = document.getElementById('email');
+                    const errorEmail = document.getElementById('error-email');
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(emailInput.value.trim())) {
+                        errorEmail.classList.remove('hidden');
+                        isValid = false;
+                    } else {
+                        errorEmail.classList.add('hidden');
+                    }
+
+                    // Inquiry Type validation
+                    const inquiryTypeSelect = document.getElementById('inquiry-type');
+                    const errorInquiryType = document.getElementById('error-inquiry-type');
+                    if (!inquiryTypeSelect.value) {
+                        errorInquiryType.classList.remove('hidden');
+                        isValid = false;
+                    } else {
+                        errorInquiryType.classList.add('hidden');
+                    }
+
+                    // Message validation
+                    const messageInput = document.getElementById('message');
+                    const errorMessage = document.getElementById('error-message');
+                    if (!messageInput.value.trim()) {
+                        errorMessage.classList.remove('hidden');
+                        isValid = false;
+                    } else {
+                        errorMessage.classList.add('hidden');
+                    }
+
+                    const formNotice = document.getElementById('form-notice');
+                    if (isValid) {
+                        formNotice.classList.remove('hidden');
+                        contactForm.reset();
+                        formNotice.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    } else {
+                        formNotice.classList.add('hidden');
+                    }
+                });
+            }
+        });
+
+        /* 8. Technology Modal Interactions */
+        function openTechModal(title, description) {
+            const modal = document.getElementById('tech-modal');
+            const modalTitle = document.getElementById('modal-title');
+            const modalDesc = document.getElementById('modal-desc');
+            if (modal && modalTitle && modalDesc) {
+                modalTitle.textContent = title;
+                modalDesc.textContent = description;
+                modal.classList.remove('hidden');
+            }
+        }
+
+        function closeTechModal() {
+            const modal = document.getElementById('tech-modal');
+            if (modal) {
+                modal.classList.add('hidden');
+            }
+        }
+
+        // Close modal on background click
+        window.addEventListener('click', (e) => {
+            const modal = document.getElementById('tech-modal');
+            if (e.target === modal) {
+                closeTechModal();
+            }
+        });
+    </script>
+</body>
+</html>
